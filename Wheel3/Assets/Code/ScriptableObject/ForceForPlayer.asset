@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7b9cd04b874633849715cfca0e2019, type: 3}
   m_Name: ForceForPlayer
   m_EditorClassIdentifier: 
-  ConstantForce: 9
+  ConstantForce: 5
   UphillForce: 0.5
   TiltForce: 0.3

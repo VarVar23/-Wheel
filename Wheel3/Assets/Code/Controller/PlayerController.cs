@@ -26,21 +26,25 @@ namespace Code.Controller
             var positionY = _rigidbody2D.transform.position.y; // наклон
             if (positionY > 0 && positionY < 0.5)
             {
-                _move = new Vector2(_rigidbody2D.transform.position.x + _playerData.ForceToSpeedPlayer.ConstantForce,_rigidbody2D.transform.position.y);
+                _move = new Vector2(_rigidbody2D.transform.position.x + _playerData.ForceToSpeedPlayer.ConstantForce,
+                    _rigidbody2D.transform.position.y);
                 _rigidbody2D.velocity += _move * Time.deltaTime ;
             }
             else if( positionY > 0.5)
             {
-                _move = new Vector2(_rigidbody2D.transform.position.x,_rigidbody2D.transform.position.y + (_playerData.ForceToSpeedPlayer.ConstantForce -
-                    _playerData.ForceToSpeedPlayer.UphillForce));
+                _move = new Vector2(_rigidbody2D.transform.position.x + (_playerData.ForceToSpeedPlayer.ConstantForce -
+                                                                         _playerData.ForceToSpeedPlayer.UphillForce),
+                    _rigidbody2D.transform.position.y);
                 
                 _rigidbody2D.velocity += _move * Time.deltaTime;
             }
             else if (positionY < 0)
             {
-                _move = new Vector2(_rigidbody2D.transform.position.x,_rigidbody2D.transform.position.y);
+                _move = new Vector2(_rigidbody2D.transform.position.x + 
+                                    (_playerData.ForceToSpeedPlayer.ConstantForce + _playerData.ForceToSpeedPlayer.TiltForce),
+                    _rigidbody2D.transform.position.y);
                 
-                _rigidbody2D.velocity += (_move * ((_playerData.ForceToSpeedPlayer.ConstantForce + _playerData.ForceToSpeedPlayer.TiltForce))  * Time.deltaTime);
+                _rigidbody2D.velocity += (_move * Time.deltaTime);
             }
         }
     }
