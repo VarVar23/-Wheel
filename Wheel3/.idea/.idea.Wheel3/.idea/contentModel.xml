@@ -7,11 +7,26 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Code" t="Include">
+          <e p="Camera" t="Include">
+            <e p="Camera.cs" t="Include" />
+          </e>
+          <e p="Coin" t="Include">
+            <e p="Controller" t="Include">
+              <e p="CoinController.cs" t="Include" />
+            </e>
+            <e p="Model" t="Include">
+              <e p="CoinModel.cs" t="Include" />
+            </e>
+            <e p="View" t="Include">
+              <e p="CoinView.cs" t="Include" />
+            </e>
+          </e>
           <e p="GameStarter.cs" t="Include" />
           <e p="Main.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="Controller" t="Include">
               <e p="PlayerController.cs" t="Include" />
+              <e p="PlayerJump.cs" t="Include" />
               <e p="PlayerSpawnController.cs" t="Include" />
             </e>
             <e p="Model" t="Include">
@@ -25,6 +40,7 @@
         </e>
         <e p="ScriptableObject" t="Include">
           <e p="Code" t="Include">
+            <e p="CoinSO.cs" t="Include" />
             <e p="ForceForPlayer.cs" t="Include" />
             <e p="SettingJump.cs" t="Include" />
           </e>
