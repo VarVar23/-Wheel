@@ -1,9 +1,10 @@
 ﻿
+using System;
 using UnityEngine;
 
 namespace Sergey
 {
-    public class PlayerController
+    public class PlayerController : IDisposable
     {
         private PlayerMain _playerMain;
         private PlayerView _playerView;
@@ -16,7 +17,7 @@ namespace Sergey
         private int _contactsCount;
         private bool IsGrounded;
 
-        public PlayerController(PlayerView playerView, ForceForPlayer forceForPlayer)
+        public PlayerController(PlayerView playerView, ForceForPlayer forceForPlayer, SettingJump settingJump)
         {
             _contactPoint = new ContactPoint2D[10];
             _collider2D = playerView.GetComponent<Collider2D>();
@@ -25,6 +26,9 @@ namespace Sergey
             PlayerData._speedPlayerY = forceForPlayer._speedPlayerY;
             PlayerData._maxPlayerSpeedX = forceForPlayer._maxPlayerSpeedX;
             PlayerData._maxPlayerSpeedY = forceForPlayer._maxPlayerSpeedY;
+            PlayerData._playerJumpX = settingJump.JumpX;
+            PlayerData._playerJumpY = settingJump.JumpY;
+            playerView.DoJump += PlayerJump;
         }
 
 
@@ -40,8 +44,6 @@ namespace Sergey
             {
                 IsGrounded = false;
             }
-
-            Debug.Log(IsGrounded);
         }
 
 
@@ -51,6 +53,19 @@ namespace Sergey
                             || _rigidbody2D.velocity.y > PlayerData._maxPlayerSpeedY) return;
 
             _rigidbody2D.velocity += new Vector2(PlayerData._speedPlayerX, PlayerData._speedPlayerY);
+        }
+
+        public void PlayerJump()
+        {
+            if(!IsGrounded || _rigidbody2D.velocity.y > 2.0f) return;
+           
+            _rigidbody2D.AddForce(new Vector2(PlayerData._playerJumpX,PlayerData._playerJumpY), ForceMode2D.Force);
+                
+        }
+
+        public void Dispose()
+        {
+            _playerView.DoJump -= PlayerJump;
         }
     }
 }
