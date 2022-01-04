@@ -21,12 +21,23 @@
               <e p="CoinView.cs" t="Include" />
             </e>
           </e>
+          <e p="Death" t="Include">
+            <e p="Controller" t="Include">
+              <e p="DeathPlayerController.cs" t="Include" />
+            </e>
+            <e p="Data" t="Include">
+              <e p="DeathData.cs" t="Include" />
+            </e>
+            <e p="View" t="Include">
+              <e p="DeathView.cs" t="Include" />
+            </e>
+          </e>
           <e p="GameStarter.cs" t="Include" />
           <e p="Main.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="Controller" t="Include">
               <e p="PlayerController.cs" t="Include" />
-              <e p="PlayerJump.cs" t="Include" />
+              <e p="PlayerJumpController.cs" t="Include" />
               <e p="PlayerSpawnController.cs" t="Include" />
             </e>
             <e p="Model" t="Include">
@@ -41,6 +52,7 @@
         <e p="ScriptableObject" t="Include">
           <e p="Code" t="Include">
             <e p="CoinSO.cs" t="Include" />
+            <e p="DeathPlayerSO.cs" t="Include" />
             <e p="PlayerMoveSO.cs" t="Include" />
             <e p="SettingJumpSO.cs" t="Include" />
           </e>

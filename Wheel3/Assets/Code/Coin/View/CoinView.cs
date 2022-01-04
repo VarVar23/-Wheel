@@ -13,6 +13,7 @@ namespace Sergey
         {
             _playSound += delegate {  };
             _playAnimation += delegate {  };
+            PlayerPrefs.GetInt("Money", 0); // возможно не здесь должен находиться
         }
 
         private void OnTriggerEnter2D(Collider2D other)

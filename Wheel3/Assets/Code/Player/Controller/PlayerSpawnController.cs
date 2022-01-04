@@ -11,8 +11,6 @@ namespace Sergey
         {
             _positionSpawn = new Vector3(0, 0, 0);
             //_gameObjectPlayer = GameObject.Instantiate(CreateGameObjectPlayer, _positionSpawn, Quaternion.identity, parent);
-            PlayerPrefs.GetInt("ActiveSkin", 0);
         }
     }
 }
-

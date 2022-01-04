@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 namespace Sergey
 {
@@ -14,7 +13,6 @@ namespace Sergey
             _coinView = coinView;
             coinView._playSound += PlayAudioCoin;
             coinView._playAnimation += PlayAnimationCoin;
-            PlayerPrefs.GetInt("Money", 0); // возможно не здесь должен находиться
         }
 
         public void PlayAnimationCoin()

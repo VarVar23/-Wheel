@@ -4,19 +4,20 @@ namespace Sergey
 {
     public class PlayerData
     {
-        private  PlayerMoveSO _playerMoveSo;
-        private  SettingJumpSO _settingJumpSo;
-        
-        public  float _speedPlayerX;
-        public  float _speedPlayerY;
-        public  float _maxPlayerSpeedX;
-        public  float _maxPlayerSpeedY;
+        private PlayerMoveSO _playerMoveSo;
+        private SettingJumpSO _settingJumpSo;
 
-        public  float _playerJumpX;
-        public  float _playerJumpY;
+        public float _speedPlayerX;
+        public float _speedPlayerY;
+        public float _maxPlayerSpeedX;
+        public float _maxPlayerSpeedY;
 
-        public  AudioClip _AudioClip; // прокинуть клип и дописать логику в Controller`e
-        
+        public float _playerJumpX;
+        public float _playerJumpY;
+
+
+        public AudioClip _AudioClip; // прокинуть клип и дописать логику в Controller`e
+
         public PlayerData(PlayerMoveSO playerMoveSo, SettingJumpSO settingJumpSo)
         {
             _speedPlayerX = playerMoveSo._speedPlayerX;

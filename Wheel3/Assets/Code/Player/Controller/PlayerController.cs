@@ -7,6 +7,8 @@ namespace Sergey
     {
         private PlayerView _playerView;
         private PlayerData _playerData;
+        private DeathPlayerController _deathPlayerController;
+        private PlayerJumpController _playerJumpController;
 
         private PlayerMoveSO _playerMoveSo;
         private Rigidbody2D _rigidbody2D;
@@ -14,17 +16,20 @@ namespace Sergey
         private ContactPoint2D[] _contactPoint;
         private Collider2D _collider2D;
         private int _contactsCount;
-        private bool IsGrounded;
+        private bool _isGrounded;
 
-        public PlayerController(PlayerView playerView, PlayerMoveSO playerMoveSo, SettingJumpSO settingJumpSo)
+        public PlayerController(PlayerView playerView, PlayerMoveSO playerMoveSo, SettingJumpSO settingJumpSo,
+            DeathPlayerSO deathPlayerSoSo,
+            DeathView deathView)
         {
             _collider2D = playerView.GetComponent<Collider2D>();
             _rigidbody2D = playerView.GetComponent<Rigidbody2D>();
             _contactPoint = new ContactPoint2D[10];
-            _playerData = new PlayerData(playerMoveSo,settingJumpSo);
-            playerView.DoJump += PlayerJump;
+            _playerData = new PlayerData(playerMoveSo, settingJumpSo);
+            _playerJumpController = new PlayerJumpController(_playerData, playerView);
+            _deathPlayerController = new DeathPlayerController(playerView, deathView, deathPlayerSoSo);
+            playerView.DoJump += Jumps;
         }
-
 
         public void OnContact()
         {
@@ -32,34 +37,32 @@ namespace Sergey
 
             if (_contactsCount > 0)
             {
-                IsGrounded = true;
+                _isGrounded = true;
             }
             else
             {
-                IsGrounded = false;
+                _isGrounded = false;
             }
         }
 
         public void PlayerMove()
         {
-            if (!IsGrounded || _rigidbody2D.velocity.x > _playerData._maxPlayerSpeedX
-                            || _rigidbody2D.velocity.y > _playerData._maxPlayerSpeedY) return;
+            if (!_isGrounded || _rigidbody2D.velocity.x > _playerData._maxPlayerSpeedX
+                             || _rigidbody2D.velocity.y > _playerData._maxPlayerSpeedY) return;
 
             _rigidbody2D.velocity += new Vector2(_playerData._speedPlayerX, _playerData._speedPlayerY);
         }
 
-        public void PlayerJump()
+        public void Jumps()
         {
-            if(!IsGrounded) return;
-           
-            _rigidbody2D.AddForce(new Vector2(_playerData._playerJumpX,_playerData._playerJumpY), ForceMode2D.Impulse);
+            if (!_isGrounded) return;
 
-            _rigidbody2D.AddForce(new Vector2(_playerData._playerJumpX,_playerData._playerJumpY), ForceMode2D.Impulse);
+            _playerJumpController.Jump();
         }
 
         public void Dispose()
         {
-            _playerView.DoJump -= PlayerJump;
+            _playerView.DoJump -= Jumps;
         }
     }
 }
