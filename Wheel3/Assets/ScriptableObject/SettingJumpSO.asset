@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f388374efd44b29c99c39869a76256, type: 3}
   m_Name: SettingJumpSO
   m_EditorClassIdentifier: 
-  JumpX: 0.3
-  JumpY: 0.6
+  JumpX: 3
+  JumpY: 8
+  _AudioClip: {fileID: 0}

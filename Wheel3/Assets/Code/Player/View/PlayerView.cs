@@ -12,17 +12,12 @@ namespace Sergey
 
         private void Start()
         {
-            
+            _buttonToJump.onClick.AddListener(() => DoJump.Invoke());
             _otherButton.onClick.AddListener(()=>
             {
                 Time.timeScale = 0.0f; // для проверки работы
                 Debug.Log("Other");
             });
-        }
-
-        private void FixedUpdate()
-        {
-            _buttonToJump.onClick.AddListener(() => DoJump.Invoke());
         }
     }
 }
