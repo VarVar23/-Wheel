@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: SettingJumpSO
   m_EditorClassIdentifier: 
   JumpX: 3
+<<<<<<< HEAD
   JumpY: 6
+=======
+  JumpY: 8
+>>>>>>> 32c80f6776635e880831ce50ff255b083186555d
   _AudioClip: {fileID: 0}
