@@ -41,8 +41,8 @@
         <e p="ScriptableObject" t="Include">
           <e p="Code" t="Include">
             <e p="CoinSO.cs" t="Include" />
-            <e p="ForceForPlayer.cs" t="Include" />
-            <e p="SettingJump.cs" t="Include" />
+            <e p="PlayerMoveSO.cs" t="Include" />
+            <e p="SettingJumpSO.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">
