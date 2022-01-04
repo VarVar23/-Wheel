@@ -1,8 +1,7 @@
 ﻿using System;
-using Sergey;
 using UnityEngine;
 
-namespace Code.Coin.View
+namespace Sergey
 {
     public class CoinView : MonoBehaviour
     {

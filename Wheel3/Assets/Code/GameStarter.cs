@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public class GameStarter : MonoBehaviour
+namespace Sergey
 {
-    
+    public class GameStarter : MonoBehaviour
+    {
+    }
 }
+

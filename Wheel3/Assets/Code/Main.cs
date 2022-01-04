@@ -1,17 +1,17 @@
-﻿using Code.Coin.Controller;
-using Code.Coin.View;
-using Sergey;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Main : MonoBehaviour
+namespace Sergey
 {
-  [SerializeField] private CoinView _coinView;
-  [SerializeField] private CoinSO _coinSo;
-  private CoinModel _coinModel;
-  private CoinController _coinController;
-
-  private void Start()
+  public class Main : MonoBehaviour
   {
-    _coinController = new CoinController(_coinSo, _coinView);
+    [SerializeField] private CoinView _coinView;
+    [SerializeField] private CoinSO _coinSo;
+    private CoinController _coinController;
+  
+    private void Start()
+    {
+      _coinController = new CoinController(_coinSo, _coinView);
+    }
   }
 }
+

@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Sergey
 {
@@ -8,16 +7,17 @@ namespace Sergey
         [SerializeField] private PlayerView _playerView;
         [SerializeField] private GameObject _prefabPlayer;
         [SerializeField] private Transform _parentPlayer;
-        [SerializeField] private ForceForPlayer _forceForPlayer;
-        [SerializeField] private SettingJump _settingJump;
+        [SerializeField] private PlayerMoveSO playerMoveSo;
+        [SerializeField] private SettingJumpSO settingJumpSo;
 
         
         private PlayerController _playerController;
+        private PlayerSpawnController _playerSpawnController;
 
-        private void Awake()
+        private void Start()
         {
-            PlayerSpawnController _playerSpawnController = new PlayerSpawnController(_prefabPlayer,_parentPlayer);
-            _playerController = new PlayerController(_playerView,_forceForPlayer,_settingJump);
+            _playerSpawnController = new PlayerSpawnController(_prefabPlayer, _parentPlayer);
+            _playerController = new PlayerController(_playerView, playerMoveSo, settingJumpSo);
         }
         private void FixedUpdate()
         {

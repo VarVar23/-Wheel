@@ -9,6 +9,8 @@ namespace Sergey
         private int _countCoin;
         
         public int CountCoin { get; private set; }
+        public Animation AnimationCoin { get; private set; }
+        public AudioClip AudioClipCoin { get; private set; }
 
         public CoinModel(CoinSO coinSo)
         {

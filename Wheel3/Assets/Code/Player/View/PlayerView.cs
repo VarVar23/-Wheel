@@ -6,23 +6,14 @@ namespace Sergey
 {
     public class PlayerView : MonoBehaviour
     {
-        [SerializeField] private Button _buttonToJump;
-        [SerializeField] private Button _otherButton;
-        public event Action DoJump;
+       public event Action DoJump;
 
-        private void Start()
+        private void Update()
         {
-            
-            _otherButton.onClick.AddListener(()=>
+            if (Input.GetMouseButtonDown(0))
             {
-                Time.timeScale = 0.0f; // для проверки работы
-                Debug.Log("Other");
-            });
-        }
-
-        private void FixedUpdate()
-        {
-            _buttonToJump.onClick.AddListener(() => DoJump.Invoke());
+                DoJump.Invoke();
+            }
         }
     }
 }

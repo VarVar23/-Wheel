@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace Sergey
@@ -8,8 +7,9 @@ namespace Sergey
     {
         private PlayerMain _playerMain;
         private PlayerView _playerView;
+        private PlayerData _playerData;
 
-        private ForceForPlayer _forceForPlayer;
+        private PlayerMoveSO _playerMoveSo;
         private Rigidbody2D _rigidbody2D;
 
         private ContactPoint2D[] _contactPoint;
@@ -17,17 +17,12 @@ namespace Sergey
         private int _contactsCount;
         private bool IsGrounded;
 
-        public PlayerController(PlayerView playerView, ForceForPlayer forceForPlayer, SettingJump settingJump)
+        public PlayerController(PlayerView playerView, PlayerMoveSO playerMoveSo, SettingJumpSO settingJumpSo)
         {
-            _contactPoint = new ContactPoint2D[10];
             _collider2D = playerView.GetComponent<Collider2D>();
             _rigidbody2D = playerView.GetComponent<Rigidbody2D>();
-            PlayerData._speedPlayerX = forceForPlayer._speedPlayerX;
-            PlayerData._speedPlayerY = forceForPlayer._speedPlayerY;
-            PlayerData._maxPlayerSpeedX = forceForPlayer._maxPlayerSpeedX;
-            PlayerData._maxPlayerSpeedY = forceForPlayer._maxPlayerSpeedY;
-            PlayerData._playerJumpX = settingJump.JumpX;
-            PlayerData._playerJumpY = settingJump.JumpY;
+            _contactPoint = new ContactPoint2D[10];
+            _playerData = new PlayerData(playerMoveSo,settingJumpSo);
             playerView.DoJump += PlayerJump;
         }
 
@@ -49,17 +44,17 @@ namespace Sergey
 
         public void PlayerMove()
         {
-            if (!IsGrounded || _rigidbody2D.velocity.x > PlayerData._maxPlayerSpeedX
-                            || _rigidbody2D.velocity.y > PlayerData._maxPlayerSpeedY) return;
+            if (!IsGrounded || _rigidbody2D.velocity.x > _playerData._maxPlayerSpeedX
+                            || _rigidbody2D.velocity.y > _playerData._maxPlayerSpeedY) return;
 
-            _rigidbody2D.velocity += new Vector2(PlayerData._speedPlayerX, PlayerData._speedPlayerY);
+            _rigidbody2D.velocity += new Vector2(_playerData._speedPlayerX, _playerData._speedPlayerY);
         }
 
         public void PlayerJump()
         {
-            if(!IsGrounded || _rigidbody2D.velocity.y > 2.0f) return;
+            if(!IsGrounded) return;
            
-            _rigidbody2D.AddForce(new Vector2(PlayerData._playerJumpX,PlayerData._playerJumpY), ForceMode2D.Force);
+            _rigidbody2D.AddForce(new Vector2(_playerData._playerJumpX,_playerData._playerJumpY), ForceMode2D.Impulse);
                 
         }
 
