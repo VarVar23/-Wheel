@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
 
-public class Main : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+//public class Main : MonoBehaviour
+//{
+//    [SerializeField] private playerView1 _playerView;
+//    [SerializeField] private ForceForPlayer _forceForPlayer;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+//    private PlayerController _playerController;
+
+//    private void Start()
+//    {
+//        _playerController = new PlayerController(_forceForPlayer, _playerView);
+//    }
+
+//    private void FixedUpdate()
+//    {
+//        _playerController.PlayerMove();
+//    }
+//}
