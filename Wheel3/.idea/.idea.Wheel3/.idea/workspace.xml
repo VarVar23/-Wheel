@@ -41,9 +41,9 @@
         <option value="$PROJECT_DIR$/Assets/Code/Coin/Controller/CoinController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Main.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObject/Code/SettingJumpSO.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/Player/Model/PlayerData.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/View/PlayerView.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player/Controller/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/Player/Model/PlayerData.cs" />
       </list>
     </option>
   </component>
@@ -63,10 +63,10 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="7780">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="7780" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -96,6 +96,8 @@
       <workItem from="1641217982990" duration="5092000" />
       <workItem from="1641223477442" duration="5380000" />
       <workItem from="1641282223931" duration="2124000" />
+      <workItem from="1641285579740" duration="135000" />
+      <workItem from="1641285804301" duration="111000" />
     </task>
     <servers />
   </component>

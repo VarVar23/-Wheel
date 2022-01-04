@@ -886,7 +886,7 @@ MonoBehaviour:
   _prefabPlayer: {fileID: 914447210}
   _parentPlayer: {fileID: 834893232}
   playerMoveSo: {fileID: 11400000, guid: e805c03835e214a4caba11373376ed7a, type: 2}
-  settingJumpSo: {fileID: 11400000, guid: ba03d7947bf54824bab40ece4bfb5e6e, type: 2}
+  settingJumpSo: {fileID: 11400000, guid: c633d655bc4ac3947af8f2f7f7e2b63c, type: 2}
 --- !u!1 &901564008
 GameObject:
   m_ObjectHideFlags: 0

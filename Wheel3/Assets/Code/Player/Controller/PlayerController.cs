@@ -6,12 +6,9 @@ namespace Sergey
     public class PlayerController : IDisposable
     {
         private PlayerView _playerView;
-<<<<<<< HEAD
         private PlayerData _playerData;
 
         private PlayerMoveSO _playerMoveSo;
-=======
->>>>>>> 32c80f6776635e880831ce50ff255b083186555d
         private Rigidbody2D _rigidbody2D;
 
         private ContactPoint2D[] _contactPoint;
@@ -54,14 +51,10 @@ namespace Sergey
         public void PlayerJump()
         {
             if(!IsGrounded) return;
-<<<<<<< HEAD
            
             _rigidbody2D.AddForce(new Vector2(_playerData._playerJumpX,_playerData._playerJumpY), ForceMode2D.Impulse);
-                
-=======
 
-            _rigidbody2D.AddForce(new Vector2(PlayerData._playerJumpX,PlayerData._playerJumpY), ForceMode2D.Impulse);
->>>>>>> 32c80f6776635e880831ce50ff255b083186555d
+            _rigidbody2D.AddForce(new Vector2(_playerData._playerJumpX,_playerData._playerJumpY), ForceMode2D.Impulse);
         }
 
         public void Dispose()
