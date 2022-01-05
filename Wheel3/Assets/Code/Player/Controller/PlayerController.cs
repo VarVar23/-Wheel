@@ -42,6 +42,7 @@ namespace Sergey
 
         public void PlayerMove()
         {
+            Debug.Log(_rigidbody2D.name);
             if (!IsGrounded || _rigidbody2D.velocity.x > _playerData._maxPlayerSpeedX
                             || _rigidbody2D.velocity.y > _playerData._maxPlayerSpeedY) return;
 
