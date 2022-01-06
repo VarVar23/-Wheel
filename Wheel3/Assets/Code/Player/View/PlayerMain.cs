@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Sergey
 {
@@ -19,6 +20,7 @@ namespace Sergey
             _playerSpawnController = new PlayerSpawnController(_prefabPlayer, _parentPlayer);
             _playerController = new PlayerController(_playerView, playerMoveSo, settingJumpSo);
         }
+        
         private void FixedUpdate()
         {
             _playerController.OnContact();

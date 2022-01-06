@@ -8,7 +8,7 @@ namespace Sergey
         [SerializeField] private float _smooth;
         [SerializeField] private Vector3 _offset;
 
-        private void Update()
+        private void FixedUpdate()
         {
             transform.position = Vector3.Lerp(transform.position, _target.position + _offset, Time.deltaTime * _smooth);
         }
