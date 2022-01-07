@@ -464,7 +464,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!1 &301427909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,6 +1773,7 @@ GameObject:
   - component: {fileID: 890989149}
   - component: {fileID: 890989148}
   - component: {fileID: 890989147}
+  - component: {fileID: 890989151}
   m_Layer: 5
   m_Name: BG Canvas
   m_TagString: Untagged
@@ -1860,6 +1861,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &890989151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890989146}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45c586b57f54e859ff62d4aed7ea60c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraTransform: {fileID: 224523166}
+  _paralaxEfect: {x: 0.6, y: 0.3}
 --- !u!1 &910141024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,6 +1966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 965258153}
   - component: {fileID: 965258152}
+  - component: {fileID: 965258154}
   m_Layer: 0
   m_Name: path9418_0
   m_TagString: Untagged
@@ -2022,6 +2038,20 @@ Transform:
   m_Father: {fileID: 1855306754}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &965258154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965258151}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45c586b57f54e859ff62d4aed7ea60c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraTransform: {fileID: 224523166}
+  _paralaxEfect: {x: 0.5, y: 5}
 --- !u!1 &977977725
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7b9cd04b874633849715cfca0e2019, type: 3}
   m_Name: ForceForPlayerSO
   m_EditorClassIdentifier: 
-  _speedPlayerX: 10
+  _speedPlayerX: -50
   _speedPlayerY: 1
   _maxPlayerSpeedX: 15
-  _maxPlayerSpeedY: 2
+  _maxPlayerSpeedY: 3
