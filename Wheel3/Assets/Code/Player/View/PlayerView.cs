@@ -16,8 +16,13 @@ namespace Sergey
         {
             if (Input.GetMouseButtonDown(0))
             {
+<<<<<<< Updated upstream
                 DoJump.Invoke();
             }
+=======
+                DoJump?.Invoke();
+            };
+>>>>>>> Stashed changes
         }
     }
 }

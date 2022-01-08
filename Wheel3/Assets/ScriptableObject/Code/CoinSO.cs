@@ -6,7 +6,7 @@ namespace Sergey
     public class CoinSO : ScriptableObject
     {
         public Animation _animationCoin;
-        public AudioClip _audioClipCoin; // возможно придется заменить на AudioSource
+        public AudioSource _audioClipCoin; // возможно придется заменить на AudioSource
         public int _countCoin;
     }
 }

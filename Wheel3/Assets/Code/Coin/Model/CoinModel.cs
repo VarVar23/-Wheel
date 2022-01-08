@@ -4,13 +4,19 @@ namespace Sergey
 {
     public class CoinModel
     {
+<<<<<<< Updated upstream
         //private Animation _animationCoin;
         //private AudioClip _audioClipCoin;
         //private int _countCoin;
+=======
+        private Animation _animationCoin;
+        private AudioSource _audioClipCoin;
+        private int _countCoin;
+>>>>>>> Stashed changes
         
-        public int CountCoin { get; private set; }
+        public int CountCoin { get; set; }
         public Animation AnimationCoin { get; private set; }
-        public AudioClip AudioClipCoin { get; private set; }
+        public AudioSource AudioClipCoin { get; private set; }
 
         public CoinModel(CoinSO coinSo)
         {
